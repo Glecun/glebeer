@@ -1,0 +1,178 @@
+.menu span.title-new {
+    color: white;
+    font-weight: bold;
+    margin-top: 18px;
+    font-size: 19px;
+    display: block;
+    margin-left: 20px;
+}
+
+div.card-new{
+    background: white;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+/* Search card */
+div.card-search-new div.search{
+    padding: 0;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    margin-left: 15px;
+    width: 90%;
+}
+
+div.card-search-new div.search .mdl-button{
+    bottom:0;
+    top: 2px;
+}
+
+div.card-search-new .mdl-textfield__label:after {
+    background-color: rgb(216, 216, 216) !important;
+    margin-left: 20px;
+}
+
+div.card-search-new .mdl-textfield__input{
+    margin-top: 3px;
+    margin-left: 20px;
+    border: none;
+    color: #757575;
+}
+
+div.card-search-new .mdl-button .material-icons{
+    color: #4caf50;
+}
+
+div.card-search-new .mdl-textfield__label{
+    color: rgb(255, 255, 255);
+}
+
+div.card-search-new .mdl-textfield.is-dirty .mdl-textfield__expandable-holder,
+div.card-search-new .mdl-textfield.is-focused .mdl-textfield__expandable-holder{
+    max-width: none;
+    width: 100%;
+}
+
+/* List warn */
+div.div-item-warn{
+    margin-left: 20px;
+    padding-top: 8px;
+    padding-bottom:8px;
+}
+
+span.span-item-warn{
+    color:#757575;
+    font-size: 16px;
+}
+
+i.icon-warn{
+    font-size: 19px;
+    color: #4caf50;
+    vertical-align: top;
+    margin-right: 6px;
+}
+
+/* Form new */
+.card-form-new .mdl-textfield,.card-form-new .mdl-search{
+    width: 90%;
+    margin-left:20px;
+    margin-right:20px;
+}
+
+.card-form-new .mdl-textfield input,.card-form-new .mdl-textfield label,
+.card-form-new .mdl-search input,.card-form-new .mdl-search label{
+    color: #757575 !important;
+}
+
+.card-form-new .input-file{
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.card-form-new .file-upload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 10;
+    font-size: 20px;
+    cursor: pointer;
+    height: 36px;
+    opacity: 0;
+    filter: alpha(opacity=0); 
+}
+
+.card-form-new .fileuploadurl{
+    color: #757575 !important;
+    border: none;
+    margin-left:10px;
+    font-size: 12px;
+    padding-left: 0;
+    width: 20%;
+    width: 45%;
+}
+
+.mdl-button--raised {
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12) !important;
+    color: #757575 ;
+}
+
+.card-form-new .div-button-save{
+    padding-bottom: 10px;
+    width: 100%;
+    padding-top: 10px;
+    text-align: right;
+    margin-top: -56px;
+}
+
+.card-form-new .div-button-save .mdl-button{
+    background: rgb(76, 175, 80);
+    margin-right: 25px;
+}
+
+.card-form-new .div-button-save .mdl-button i{
+    color:white;
+}
+
+.mdl-textfield--floating-label.is-dirty .mdl-textfield__label, .mdl-textfield--floating-label.is-focused .mdl-textfield__label, .card-form-new .mdl-textfield--floating-label .mdl-textfield__label{
+    font-weight:bold;
+    color: #4caf50 !important;
+}
+
+.card-form-new .mdl-search {
+    width: 100%;
+    max-width: none;
+}
+
+.card-form-new .mdl-search .mdl-search__input{
+    height:auto;
+}
+.card-form-new .mdl-search .mdl-search__item{
+    line-height: 35px;
+    height: auto;
+    display: inline-block;
+}
+
+
+/* Toast info */
+#toast-ok{
+    background-color: white;
+    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 3px 1px -2px rgba(0,0,0,.2), 0 1px 5px 0 rgba(0,0,0,.12);
+}
+
+#toast-ok button{
+    padding: 0px;
+}
+
+#toast-ok .mdl-snackbar__text{
+    color:#4caf50;
+    padding-left: 12px;
+    text-align:center;
+    font-size: 18px;
+    font-weight:bold;
+    width: 100%;    
+}
