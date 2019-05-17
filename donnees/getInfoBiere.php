@@ -1,36 +1,28 @@
 <?php
 ini_set('display_errors',1);
 if (isset($_GET['name'])){
-	$name=$_GET['name'];
-	$url='https://www.saveur-biere.com/fr/search-result/';
+    $name=$_GET['name'];
 
-	libxml_use_internal_errors(true);
-	$dom = new DomDocument;
-	$dom->loadHTMLFile($url.$name);
-	$xpath = new DomXPath($dom);
+    $url='https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&facet=style_name&facet=cat_name&facet=name_breweries&facet=country&q='.$name;
 
-	$biere = array();
+    $response = json_decode(file_get_contents($url), true);
+    $biereFromApi = $response["records"][0]["fields"];
 
-	$infosPrincipal = $xpath->query("//div[@class='gtm-product-list']/ul/li[1]/div/div[1]/div[2]/div/*");
-	foreach ($infosPrincipal as $i => $node) {
-	   if ($i==0) $biere['rate']=substr(preg_replace("/[^0-9]/","",$node->nodeValue), 0, -3);; 
-	   if ($i==1) $biere['name']=trim($node->nodeValue);
-	   if ($i==2) $biere['brand']=trim($node->nodeValue);
-	}
+    $biere = array();
+    $biere['name'] = $biereFromApi['name'];
+    $biere['color'] = "";
+    $biere['type'] = $biereFromApi['style_name'];
+    $biere['alcohol'] = substr(str_replace(",", ".",trim($biereFromApi['abv'])),0,3);
+    $biere['rate'] = "";
+    $biere['from'] = $biereFromApi['country'];
+    $biere['brand'] = $biereFromApi['name_breweries'];
+    $biere['content'] = $biereFromApi['descript'];
+    $biere['ibu'] = $biereFromApi['ibu'];
+    $biere['img'] = "";
 
-	$infosSecondaire = $xpath->query("//div[@class='gtm-product-list']/ul/li[1]/div/div[1]/div[3]/*");
-	foreach ($infosSecondaire as $i => $node) {
-	   if ($i==0) $biere['from']=trim($node->nodeValue);
-	   if ($i==1) $biere['type']=trim($node->nodeValue);
-	   if ($i==2) $biere['color']=trim($node->nodeValue);
-	   if ($i==3) $biere['alcohol']=str_replace(",", ".", trim(trim($node->nodeValue),'°'));
-	   if ($i==4) $biere['content']=trim($node->nodeValue);
-	}
-
-	//Encodage Utf-8
-	foreach ($biere as &$champ){
-		$champ = utf8_decode($champ);
-	}
-	echo json_encode($biere);
+    //Encodage Utf-8
+    foreach ($biere as &$champ){
+        $champ = utf8_decode($champ);
+    }
+    echo json_encode($biere);
 }
-
