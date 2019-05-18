@@ -31,8 +31,9 @@ $( document ).ready(function() {
     $(".form-search-new").submit(function(e){
         q=$('.form-search-new input.mdl-textfield__input').val();
         $('div.card-result-new').html('');
+        resetFields();
         if (q!=''){
-            resetFields();
+            $('#search-web-a').attr("href", 'http://www.google.com/search?q='+ q);
             // Does the beer already exist ?
             $.ajax({
                 url : "../donnees/get_data.php",

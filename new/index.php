@@ -30,11 +30,18 @@
 			<form class='form-search-new'>
 		  		<div class="search mdl-textfield mdl-js-textfield">
 					<label class="mdl-button mdl-js-button mdl-button--icon" for="sample6">
-					  <i class="material-icons">search</i>
+                        <button class="button-search">
+					        <i class="material-icons">search</i>
+                        </button>
 					</label>
                     <input class="mdl-textfield__input" type="text" id="sample6">
 				</div>
 			</form>
+            <div class="search-web">
+                <a id="search-web-a" href="" target="_blank" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">web</i>
+                </a>
+            </div>
 		 </div>
 
 		<div class="card-new card-result-new mdl-shadow--2dp animated bounceIn"></div>
