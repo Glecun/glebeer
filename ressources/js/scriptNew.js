@@ -6,26 +6,24 @@ function camelize(str) {
     });
 }
 
-function resetFields(){
-    $('#name').val("").parent().removeClass('is-dirty');
-    $('#color').val("").parent().removeClass('is-dirty');
-    $('#variete').val("").parent().removeClass('is-dirty');
-    $('#degre').val("").parent().removeClass('is-dirty');
-    $('#note').val("").parent().removeClass('is-dirty');
-    $('#country').val("").parent().removeClass('is-dirty');
-    $('#description').val("").parent().removeClass('is-dirty');
-    $('#imgfill').attr("src", "").removeClass('fully-loaded');
-}
-
-$( document ).ready(function() {
-
-    // Set the date input
+function setDateInput() {
     var date = new Date(Date.now());
     var month = (1 + date.getMonth()).toString();
     month = month.length > 1 ? month : '0' + month;
     var day = date.getDate().toString();
     day = day.length > 1 ? day : '0' + day;
-    $('#date').val( day + '/' + month + '/' + date.getFullYear());
+    $('#date').val(day + '/' + month + '/' + date.getFullYear());
+}
+
+
+function resetFields(){
+    $('#imgfill').attr("src", "").removeClass('fully-loaded');
+    $('.form-save-new').trigger('reset');
+    setDateInput();
+}
+
+$( document ).ready(function() {
+    setDateInput();
 
     // When search beer
     $(".form-search-new").submit(function(e){
