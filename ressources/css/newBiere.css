@@ -29,30 +29,16 @@ div.card-search-new div.search .mdl-button{
     top: 2px;
 }
 
-div.card-search-new .mdl-textfield__label:after {
-    background-color: rgb(216, 216, 216) !important;
-    margin-left: 20px;
-}
-
-div.card-search-new .mdl-textfield__input{
-    margin-top: 3px;
-    margin-left: 20px;
+div.card-search-new .mdl-textfield__input {
+    margin-top: 4px;
+    margin-left: 45px;
     border: none;
     color: #757575;
+    border-bottom: 1px #e0e0e0 solid;
 }
 
 div.card-search-new .mdl-button .material-icons{
     color: #4caf50;
-}
-
-div.card-search-new .mdl-textfield__label{
-    color: rgb(255, 255, 255);
-}
-
-div.card-search-new .mdl-textfield.is-dirty .mdl-textfield__expandable-holder,
-div.card-search-new .mdl-textfield.is-focused .mdl-textfield__expandable-holder{
-    max-width: none;
-    width: 100%;
 }
 
 /* List warn */
