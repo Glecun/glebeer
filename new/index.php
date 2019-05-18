@@ -42,7 +42,8 @@
 
 		<div class="card-new card-result-new mdl-shadow--2dp animated bounceIn"></div>
 
-		<div class="card-new card-form-new mdl-shadow--2dp animated fadeInRight">
+        <div class="card-new card-form-new mdl-shadow--2dp animated fadeInRight">
+            <img id="imgfill"/>
 			<form class='form-save-new'>
 				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 					<input class="mdl-textfield__input" type="text" id="name">
