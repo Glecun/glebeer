@@ -20,9 +20,5 @@ if (isset($_GET['name'])){
     $biere['ibu'] = $biereFromApi['ibu'];
     $biere['img'] = "";
 
-    //Encodage Utf-8
-    foreach ($biere as &$champ){
-        $champ = utf8_decode($champ);
-    }
     echo json_encode($biere);
 }
