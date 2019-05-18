@@ -157,6 +157,17 @@ i.icon-warn{
     display: inline-block;
 }
 
+.card-form-new #imgfill{
+    transform: rotate(90deg);
+    margin-left: 30px;
+    margin-top: -30px;
+    margin-bottom: -35px;
+    z-index: 999;
+}
+
+.card-form-new #imgfill.fully-loaded{
+    height: 170px;
+}
 
 /* Toast info */
 #toast-ok{
