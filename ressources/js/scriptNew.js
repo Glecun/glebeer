@@ -29,6 +29,11 @@ function resetFields(){
     setDateInput();
 }
 
+function getImgFileName() {
+    var fileName = camelize($('#name').val() + $('#color').val() + $('#variete').val());
+    return fileName.replace(new RegExp("'", 'g'), "");
+}
+
 $( document ).ready(function() {
     setDateInput();
 
@@ -113,7 +118,7 @@ $( document ).ready(function() {
         data2["description"] = $('#description').val();
         data2["photo"] = "";
         if($('#photo_front').prop('files')[0]!=null){
-            data2["photo"] =camelize($('#name').val()+$('#color').val()+$('#variete').val());
+            data2["photo"] = getImgFileName();
         }
         data2["tags"] = $('#tags').val();
 
@@ -135,7 +140,7 @@ $( document ).ready(function() {
                 if($('#photo_front').prop('files')[0]!=null){
                     var file_data = $('#photo_front').prop('files')[0];
                     var form_data = new FormData();
-                    form_data.append('file', file_data,camelize($('#name').val()+$('#color').val()+$('#variete').val()));
+                    form_data.append('file', file_data, getImgFileName());
                     $.ajax({
                         url: '../donnees/uploadImg.php',
                         dataType: 'text',
@@ -159,7 +164,7 @@ $( document ).ready(function() {
                 if($('#photo_back').prop('files')[0]!=null){
                     var file_data = $('#photo_back').prop('files')[0];
                     var form_data = new FormData();
-                    form_data.append('file', file_data,camelize($('#name').val()+$('#color').val()+$('#variete').val())+"_back");
+                    form_data.append('file', file_data, getImgFileName()+"_back");
                     $.ajax({
                         url: '../donnees/uploadImg.php',
                         dataType: 'text',
