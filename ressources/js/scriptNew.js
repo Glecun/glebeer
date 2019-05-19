@@ -19,6 +19,13 @@ function setDateInput() {
 function resetFields(){
     $('#imgfill').attr("src", "").removeClass('fully-loaded');
     $('.form-save-new').trigger('reset');
+    $('#name').parent().removeClass('is-dirty');
+    $('#color').parent().removeClass('is-dirty');
+    $('#variete').parent().removeClass('is-dirty');
+    $('#degre').parent().removeClass('is-dirty');
+    $('#note').parent().removeClass('is-dirty');
+    $('#country').parent().removeClass('is-dirty');
+    $('#description').parent().removeClass('is-dirty');
     setDateInput();
 }
 
