@@ -9,15 +9,15 @@ if (isset($_GET['name'])){
     $biereFromApi = $response["records"][0]["fields"];
 
     $biere = array();
-    $biere['name'] = $biereFromApi['name'];
+    $biere['name'] = $biereFromApi['name'] != null ? $biereFromApi['name'] : "";
     $biere['color'] = "";
-    $biere['type'] = $biereFromApi['style_name'];
-    $biere['alcohol'] = substr(str_replace(",", ".",trim($biereFromApi['abv'])),0,3);
+    $biere['type'] = $biereFromApi['style_name'] != null ? $biereFromApi['style_name'] : "";
+    $biere['alcohol'] = $biereFromApi['abv'] != null ? substr(str_replace(",", ".",trim($biereFromApi['abv'])),0,3) : "";
     $biere['rate'] = "";
-    $biere['from'] = $biereFromApi['country'];
-    $biere['brand'] = $biereFromApi['name_breweries'];
-    $biere['content'] = $biereFromApi['descript'];
-    $biere['ibu'] = $biereFromApi['ibu'];
+    $biere['from'] = $biereFromApi['country'] != null ? $biereFromApi['country'] : "";
+    $biere['brand'] = $biereFromApi['name_breweries'] != null ? $biereFromApi['name_breweries'] : "";
+    $biere['content'] = $biereFromApi['descript'] != null ? $biereFromApi['descript'] : "";
+    $biere['ibu'] = $biereFromApi['ibu'] != null ? $biereFromApi['ibu'] : "";
     $biere['img'] = "";
 
     echo json_encode($biere);
