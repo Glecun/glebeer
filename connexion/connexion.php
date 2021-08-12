@@ -2,7 +2,7 @@
 	<head>
 	<title>Connexion</title>
 		
-	<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 	<!-- load myScript -->
 	<script src="script.js"></script>
 	
