@@ -3,14 +3,14 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="http://fonts.googleapis.com/icon?family=Material+Icons">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
 		<link rel="stylesheet" href="../import/material-with-search.css" />
 		<link rel="stylesheet" href="../ressources/css/animate.css">
 		<link rel="stylesheet" href="../ressources/css/style.css">
 		<link rel="stylesheet" href="../ressources/css/newBiere.css">
 
-		<script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+		<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
 		<script src="../import/material-with-search.js"></script> 
 		<script src="../ressources/js/scriptNew.js"></script>
 	
