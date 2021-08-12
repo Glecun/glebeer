@@ -20,8 +20,8 @@ $( document ).ready(function() {
 			   alert("Erreur : responseText: "+request.responseText);
 			},
 			success: function(response){
-				$(".loader").hide();	
-				$("div.content").show();					
+				$(".loader").hide();
+				$("div.content").show();
 				var aff="";
 				for(var i = 0; i < response.length; i++){
 					aff+="<div class='mdl-card mdl-shadow--2dp animated fadeInRight ";
@@ -31,21 +31,23 @@ $( document ).ready(function() {
 					aff+="' style='";
 					if (response[i]["photo"]=="")
 						aff+="background: url(\"ressources/img/question.png\") bottom 61% right 24% no-repeat rgb(76, 175, 80);background-size: 80px";
-					else 
+					else
 						aff+="background: url(\"ressources/img/"+response[i]["photo"]+".jpg\") center / cover;";
 					aff+="'>"
 					if (response[i]["photo"]!=""){
 						aff+="<span class='labelimgbeer' style='display:none;'>"+response[i]["photo"]+"</span>";
 						aff+="<img class='imghoverbeer' style='display:none;' onerror=\"this.style.visibility='hidden'\" src='ressources/img/"+response[i]["photo"]+"_back.jpg'/>";
 					}
-					if(response[i]["pays"]!="")
-						aff+="<img class='img-pays' src='ressources/img/"+response[i]["pays"]+".png' />";
-					aff+="<div class='tagName'data-tagname='";
-					aff+=response[i]["nom"].replace(/'/g, "&#39");
-					aff+="'></div></div>";
-					aff+="<div class='mdl-card__supporting-text mdl-card--expand'>";
-					aff+=response[i]["description"];
-					aff+="</div>";
+					if (response[i]["pays"] != ""){
+						$.ajax({url:'ressources/img/' + response[i]["pays"] + '.png', type:'HEAD', error: function (){console.error("ATTENTION, il manque l'image du pays: "+ this.url)}});
+						aff += "<img class='img-pays' src='ressources/img/" + response[i]["pays"] + ".png' />";
+					}
+					aff += "<div class='tagName'data-tagname='";
+					aff += response[i]["nom"].replace(/'/g, "&#39");
+					aff += "'></div></div>";
+					aff += "<div class='mdl-card__supporting-text mdl-card--expand'>";
+					aff += response[i]["description"];
+					aff += "</div>";
 					var tabtag = response[i]["tags"].split(",");
 					if( tabtag[0]!=""){
 						aff+="<div class='mdl-card__supporting-text tagdiv'>";
@@ -85,8 +87,8 @@ $( document ).ready(function() {
 					}
 					aff+="</div></div>";
 				}
-				
-					
+
+
 				$("div.content").html(aff);
 				$("#nbbeer").html( response.length +" Bières");
 				componentHandler.upgradeDom();
