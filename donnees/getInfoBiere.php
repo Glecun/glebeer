@@ -3,7 +3,7 @@ ini_set('display_errors',1);
 if (isset($_GET['name'])){
     $name=$_GET['name'];
 
-    $url='https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public-us&facet=style_name&facet=cat_name&facet=name_breweries&facet=country&q='.$name;
+    $url='https://data.opendatasoft.com/api/records/1.0/search/?dataset=open-beer-database%40public&facet=style_name&facet=cat_name&facet=name_breweries&facet=country&q='.$name;
 
     $response = json_decode(file_get_contents($url), true);
     $biereFromApi = $response["records"][0]["fields"];
