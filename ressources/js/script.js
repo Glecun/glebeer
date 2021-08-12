@@ -34,8 +34,10 @@ $( document ).ready(function() {
 					else 
 						aff+="background: url(\"ressources/img/"+response[i]["photo"]+".jpg\") center / cover;";
 					aff+="'>"
-					if (response[i]["photo"]!="")
+					if (response[i]["photo"]!=""){
 						aff+="<span class='labelimgbeer' style='display:none;'>"+response[i]["photo"]+"</span>";
+						aff+="<img class='imghoverbeer' style='display:none;' onerror=\"this.style.visibility='hidden'\" src='ressources/img/"+response[i]["photo"]+"_back.jpg'/>";
+					}
 					if(response[i]["pays"]!="")
 						aff+="<img class='img-pays' src='ressources/img/"+response[i]["pays"]+".png' />";
 					aff+="<div class='tagName'data-tagname='";
@@ -90,9 +92,9 @@ $( document ).ready(function() {
 				componentHandler.upgradeDom();
 				$('.hoverbeerimg').hover(
 				  function() {
-					$( this ).css('background','url("ressources/img/'+jQuery(this).find(".labelimgbeer").html()+'_back.jpg") center / cover , url("ressources/img/'+jQuery(this).find(".labelimgbeer").html()+'.jpg") center / cover '); 
+					  $(this).find(".imghoverbeer").fadeIn(200);
 				  }, function() {
-					$( this ).css('background','url("ressources/img/'+jQuery(this).find(".labelimgbeer").html()+'.jpg") center / cover');
+					  $(this).find(".imghoverbeer").fadeOut(200);
 				  }
 				);
 			}
