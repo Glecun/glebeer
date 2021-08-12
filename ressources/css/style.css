@@ -389,7 +389,7 @@ span.span-infos {
 }
 .selectionator:hover .menu,
 .selectionator.opened .menu {
-  height: 200px;
+  height: 90vh;
   opacity: 1;
 }
 .selectionator .menu {
