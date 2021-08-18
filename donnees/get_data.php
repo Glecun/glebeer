@@ -1,5 +1,7 @@
 <?php
 require_once 'jsonwrapper/jsonwrapper.php';
+header('Access-Control-Allow-Origin: https://untappd.com');
+
 $get = $_GET["q"];
 $checkedfiltres = $_GET["checkedfiltres"]; 
 $stringcheckedfiltres=explode(",", $checkedfiltres);
